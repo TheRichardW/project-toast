@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Toast from "../Toast";
 import styles from "./ToastShelf.module.css";
+import { ToastContext } from "../ToastProvider/ToastProvider";
 
-function ToastShelf({ toasts, removeToast }) {
+function ToastShelf() {
+  const {toasts, removeToast} = useContext(ToastContext);
   return (
     <ol className={styles.wrapper}>
       {toasts.map((toast) => (
